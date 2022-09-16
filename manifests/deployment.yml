@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: boutheinahamdiazurevotingappredis 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: boutheinahamdiazurevotingappredis
+  template:
+    metadata:
+      labels:
+        app: boutheinahamdiazurevotingappredis 
+    spec:
+      containers:
+        - name: boutheinahamdiazurevotingappredis 
+          image: myhelmacr10.azurecr.io/boutheinahamdiazurevotingappredis
+          ports:
+          - containerPort: 80
